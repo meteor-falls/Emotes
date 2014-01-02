@@ -19,7 +19,7 @@ Sources of many of the emotes are available in [source/](source/). These are all
 Tools
 =====
 
-* Convert the images to **png** using [Pixilion Image Converter](http://www.nchsoftware.com/imageconverter/).
+* Convert the images to **png** using [this website](http://image.online-convert.com/convert-to-png), use `Best Quality` and not `Pretty good` as quality. Take the `[code]-0.png` out of the zip if you convert from gif.
 
 * Next, use [TruePNG](http://x128.ho.ua/clicks/clicks.php?uri=TruePNG_0411.zip) to crush down the images. Just place it in the repo, `TruePNG.exe` is gitignored. Open a command prompt here and type `truepng emotes/emote.png`. The default settings will be used, don't use any other settings, we're trying to be consistent!
 
