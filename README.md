@@ -19,8 +19,8 @@ Sources of many of the emotes are available in [source/](source/). These are all
 Tools
 =====
 
-* Convert the images to **png** using [this website](http://image.online-convert.com/convert-to-png), use `Best Quality` and not `Pretty good` as quality. Take the `[code]-0.png` out of the zip if you convert from gif.
+* Convert the images to **png** using [this website](http://image.online-convert.com/convert-to-png), use `Best Quality` and not `Pretty good` as quality. Take the `[code]-0.png` out of the zip if you convert from gif (usually the largest file).
 
-* Next, use [TruePNG](http://x128.ho.ua/clicks/clicks.php?uri=TruePNG_0411.zip) to crush down the images. Just place it in the repo, `TruePNG.exe` is gitignored. Open a command prompt here and type `truepng emotes/emote.png`. The default settings will be used, don't use any other settings, we're trying to be consistent!
+* Next, use [TruePNG](http://x128.ho.ua/clicks/clicks.php?uri=TruePNG_0411.zip) to crush down the images. Windows is cool so you can drag-and-drop the file onto `TruePNG.exe` and it will optimize it using the default settings.
 
-* Finally, convert the images to base64 (sort of manual) with [this website](http://www.askapache.com/online-tools/base64-image-converter/). Make sure `compress images (png and jpeg)` is off. The preferred format is _image_.txt.
+* Finally, convert the images to base64 with [this website](http://www.askapache.com/online-tools/base64-image-converter/). Make sure `compress images (png and jpeg)` is off. The preferred format is _image_.txt.
