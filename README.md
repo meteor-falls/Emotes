@@ -21,6 +21,8 @@ Tools
 
 * Convert the images to **png** using [this website](http://image.online-convert.com/convert-to-png), use `Best Quality` and not `Pretty good` as quality. Take the `[code]-0.png` out of the zip if you convert from gif (usually the largest file).
 
+* You can also use ImageMagick: `$ convert source/{emote}.jpg emotes/{emote}.png`
+
 * Next, use [TruePNG](http://x128.ho.ua/clicks/clicks.php?uri=TruePNG_0411.zip) to crush down the images. Windows is cool so you can drag-and-drop the file onto `TruePNG.exe` and it will optimize it using the default settings.
 
 * Finally, convert the images to base64 with [this website](http://www.askapache.com/online-tools/base64-image-converter/). Make sure `compress images (png and jpeg)` is off. The preferred format is _image_.txt.
