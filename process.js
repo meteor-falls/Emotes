@@ -8,14 +8,25 @@ var done = [],
     total = Object.keys(emotenames).length,
     fname, i;
 
-fs.mkdirSync('emotes');
-console.log('Converting sources and optimizing PNGs');
+if (!fs.existsSync('emotes/')) {
+    console.log('Creating emotes directory');
+    fs.mkdirSync('emotes');
+}
+
+console.log('Converting and optimizing sources');
 for (i in emotenames) {
     fname = findFilename(i);
     child_process.exec('convert source/' + fname + '[0] emotes/' + i + '.png', optimize(i));
 }
 
 function finish() {
+    var j;
+    console.log('Collecting optimized emotes');
+
+    for (j in emotenames) {
+        emotes[emotenames[j]] = 'data:image/png;base64,' + fs.readFileSync('emotes/' + j + '.png', 'base64');
+    }
+
     console.log('Writing emotes.json [' + total + ' emotes]');
     fs.writeFileSync('emotes.json', JSON.stringify(emotes, null, 4));
     console.log('exit(0)');
@@ -24,7 +35,6 @@ function finish() {
 function optimize(i) {
     child_process.execFile('TruePNG.exe', ['emotes/' + i + '.png', '/o max'], {}, function () {
         done.push(i);
-        emotes[emotenames[i]] = 'data:image/png;base64,' + fs.readFileSync('emotes/' + i + '.png', 'base64');
 
         if (done.length === total) {
             finish();
