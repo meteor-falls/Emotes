@@ -17,4 +17,7 @@ Sources of many of the emotes are available in [source/](source/). These are mos
 Tools
 =====
 
-* `$ node process` to a json file of all the emotes. Hotlink to this for the most recent version.
+In the `scripts` directory:
+* `$ node generate-emotes` to generate a json file of all the emotes. Hotlink to this for the most recent version.
+* `$ node add-emote [name]` to add an emote. This expects the source to be in the `source` directory and an entry to be available in `emotes.names.json`.
+* `$ node remove-emote [name]` to remove an emote. This doesn't delete any files, it only edits emotes.json (and **not** `emotes.names.json`)
