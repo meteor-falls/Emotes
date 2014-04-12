@@ -7,7 +7,6 @@ var emote = process.argv[2],
     fnames = fs.readdirSync('source'),
     fname = findFilename(emote);
 
-console.log(process.cwd());
 console.log('Adding/updating emote ' + emote);
 
 child_process.exec('convert source/' + fname + '[0] emotes/' + emote + '.png', optimize(emote));
