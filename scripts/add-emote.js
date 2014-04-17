@@ -19,8 +19,11 @@ function finish() {
 
 function optimize(emote) {
     child_process.execFile('TruePNG.exe', ['emotes/' + emote + '.png'], {}, function () {
-        emotes[emotenames[emote]] = 'data:image/png;base64,' + fs.readFileSync('emotes/' + emote + '.png', 'base64');
-        finish();
+        // Wait a bit for race conditions
+        process.nextTick(function () {
+            emotes[emotenames[emote]] = 'data:image/png;base64,' + fs.readFileSync('emotes/' + emote + '.png', 'base64');
+            finish();
+        });
     });
 }
 

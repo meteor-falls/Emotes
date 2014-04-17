@@ -34,11 +34,14 @@ function finish() {
 
 function optimize(i) {
     child_process.execFile('TruePNG.exe', ['emotes/' + i + '.png'], {}, function () {
-        done.push(i);
+        // Wait for race conditions
+        process.nextTick(function () {
+            done.push(i);
 
-        if (done.length === total) {
-            finish();
-        }
+            if (done.length === total) {
+                finish();
+            }
+        });
     });
 }
 
