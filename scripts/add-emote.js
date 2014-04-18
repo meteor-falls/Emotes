@@ -14,14 +14,14 @@ child_process.exec('convert source/' + fname + '[0] emotes/' + emote + '.png', o
 function finish() {
     console.log('Writing emotes.json');
     fs.writeFileSync('emotes.json', JSON.stringify(emotes, null, 4));
-    console.log('Finished');
 }
 
 function optimize(emote) {
-    child_process.execFile('TruePNG.exe', ['emotes/' + emote + '.png'], {}, function () {
-        // Wait a bit for race conditions
-        process.nextTick(function () {
-            emotes[emotenames[emote]] = 'data:image/png;base64,' + fs.readFileSync('emotes/' + emote + '.png', 'base64');
+    child_process.exec('TruePNG.exe emotes/' + emote + '.png', function () {
+        fs.readFile('emotes/' + emote + '.png', 'base64', function (err, data) {
+            if (err) throw err;
+
+            emotes[emotenames[emote]] = 'data:image/png;base64,' + data;
             finish();
         });
     });

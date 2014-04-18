@@ -29,7 +29,6 @@ function finish() {
 
     console.log('Writing emotes.json [' + total + ' emotes]');
     fs.writeFileSync('emotes.json', JSON.stringify(emotes, null, 4));
-    console.log('Finished');
 }
 
 function optimize(i) {
