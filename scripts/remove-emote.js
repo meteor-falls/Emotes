@@ -1,5 +1,5 @@
 var fs = require('fs');
-var emotenames = require('./emotes.names.json');
+var emotenames = require('../emotes.names.json');
 var emotes = JSON.parse(fs.readFileSync('emotes.json'));
 
 var emote = process.argv[2];
