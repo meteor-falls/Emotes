@@ -35,7 +35,7 @@ function optimize(i) {
         done.push(i);
 
         if (done.length === total) {
-            finish();
+            setTimeout(finish, 1500);
         }
     });
 }

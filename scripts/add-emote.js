@@ -21,7 +21,7 @@ function optimize(emote) {
             if (err) throw err;
 
             emotes[emotenames[emote]] = 'data:image/png;base64,' + data;
-            finish();
+            setTimeout(finish, 1500);
         });
     });
 }
