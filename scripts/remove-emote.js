@@ -19,4 +19,4 @@ console.log('Deleting source/' + fname);
 fs.unlinkSync('source/' + fname);
 
 console.log('Deleting emotes/' + fname);
-fs.unlinkSync('source/' + fname);
+fs.unlinkSync('emotes/' + fname);
