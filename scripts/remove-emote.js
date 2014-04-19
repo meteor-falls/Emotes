@@ -18,5 +18,5 @@ eutils.writeEmoteNames(emotenames);
 console.log('Deleting source/' + fname);
 fs.unlinkSync('source/' + fname);
 
-console.log('Deleting emotes/' + fname);
-fs.unlinkSync('emotes/' + fname);
+console.log('Deleting emotes/' + emote + '.png');
+fs.unlinkSync('emotes/' + emote + '.png');
