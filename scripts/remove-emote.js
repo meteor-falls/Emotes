@@ -1,14 +1,22 @@
 var fs = require('fs');
+var eutils = require('./eutils');
 var emotenames = require('../emotes.names.json');
-var emotes = JSON.parse(fs.readFileSync('emotes.json'));
+var emotes = require('../emotes.json');
 
-var emote = process.argv[2];
+var emote = process.argv[2],
+    fname = eutils.findFilename(emote),
+    emotealts = emotenames[emote];
+
 console.log('Removing emote ' + emote);
 
-delete emotes[emotenames[emote]];
+delete emotes[emotealts];
+delete emotenames[emote];
 
-console.log('Writing emotes.json');
-fs.writeFileSync('emotes.json', JSON.stringify(emotes, null, 4));
+eutils.writeEmotes(emotes);
+eutils.writeEmoteNames(emotenames);
 
-console.info('Remember to delete the files in the source and emotes directory.');
-console.info('Remember to remove the emote entry from emotes.name.json');
+console.log('Deleting source/' + fname);
+fs.unlinkSync('source/' + fname);
+
+console.log('Deleting emotes/' + fname);
+fs.unlinkSync('source/' + fname);
