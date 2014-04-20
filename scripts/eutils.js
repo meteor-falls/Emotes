@@ -21,7 +21,8 @@ module.exports = {
         console.error('Unknown extension for ' + emote + '.');
     },
     writeEmotes: function writeEmotes(obj) {
-        console.log('Writing emotes.json [' + Object.keys(obj).length + ' emotes]');
+        // -1 because of the header
+        console.log('Writing emotes.json [' + (Object.keys(obj).length - 1) + ' emotes]');
         fs.writeFileSync('emotes.json', JSON.stringify(obj, null, 4));
     },
     writeEmoteNames: function writeEmoteNames(obj) {
