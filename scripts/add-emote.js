@@ -12,16 +12,14 @@ console.log('Adding emote ' + emote);
 child_process.exec('convert source/' + fname + '[0] emotes/' + emote + '.png', optimize(emote));
 
 function finish() {
+    var data = fs.readFileSync('emotes/' + emote + '.png', 'base64');
+
+    emotes[emotenames[emote]] = 'data:image/png;base64,' + data;
     eutils.writeEmotes(emotes);
 }
 
 function optimize(emote) {
     eutils.optimize('emotes/' + emote + '.png', function () {
-        fs.readFile('emotes/' + emote + '.png', 'base64', function (err, data) {
-            if (err) throw err;
-
-            emotes[emotenames[emote]] = 'data:image/png;base64,' + data;
-            setTimeout(finish, 1500);
-        });
+        setTimeout(finish, 1500);
     });
 }
