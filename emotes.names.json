@@ -161,13 +161,15 @@
     "vince2": "vince2,vinceming",
     "vince3": "vince3,vincelol",
     "vince4": "vince4",
-    "gball1": "gball1",
-    "gball2": "gball2",
+    "gball1": "gball1,gballsrs",
+    "gball2": "gball2,gballnv",
+    "gball3": "gball3,gballcr",
     "frball1": "frball1",
-    "euball1": "euball1",
-    "pball1": "pball1",
-    "iball1": "iball1",
+    "euball1": "euball1,euballsrs",
+    "pball1": "pball1,pballhp",
+    "pball2": "pball2,pballnv",
+    "iball1": "iball1,iballbd",
     "rball1": "rball1",
-    "rball2": "rball2",
-    "rball3": "rball3"
+    "rball2": "rball2,rballsrs",
+    "rball3": "rball3,rballcr"
 }
